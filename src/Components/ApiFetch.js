@@ -3,8 +3,9 @@ import LinearProgress from "@material-ui/core/LinearProgress";
 import Button from "@material-ui/core/Button";
 
 const Apifetch = () => {
+  const apikey = process.env.REACT_APP_API_KEY;
   const apiUrl = (page) =>
-    `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=${page}`;
+    `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${apikey}&page=${page}`;
   const [page, setPage] = useState(1);
   const [isloading, setLoading] = useState(false);
   const [movieslist, setMovieslist] = useState([]);
